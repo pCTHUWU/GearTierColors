@@ -1,0 +1,41 @@
+{
+  "_comment": "Higher tier = hotter colour, matching AmmoTierColors so both mods read the same way. Valid colours: red, orange, violet, blue, green, grey, yellow, black, default.",
+
+  "ArmourTiers": [
+    { "MinClass": 6, "Colour": "red",    "Label": "class 6+" },
+    { "MinClass": 5, "Colour": "orange", "Label": "class 5" },
+    { "MinClass": 4, "Colour": "violet", "Label": "class 4" },
+    { "MinClass": 3, "Colour": "blue",   "Label": "class 3" },
+    { "MinClass": 2, "Colour": "green",  "Label": "class 2" },
+    { "MinClass": 1, "Colour": "grey",   "Label": "class 1" }
+  ],
+
+  "_headsetComment": "Sprint hearing distance in metres, from the wiki's Earpieces table. Bare ears are 53m and the ceiling is 67m, so the whole spread is 14m - the bottom band is worth very little over wearing nothing.",
+  "HeadsetTiers": [
+    { "MinMetres": 67, "Colour": "red",    "Label": "67m" },
+    { "MinMetres": 66, "Colour": "orange", "Label": "66m" },
+    { "MinMetres": 63, "Colour": "violet", "Label": "63m" },
+    { "MinMetres": 62, "Colour": "blue",   "Label": "62m" },
+    { "MinMetres": 60, "Colour": "green",  "Label": "60-61m" },
+    { "MinMetres": 0,  "Colour": "grey",   "Label": "under 60m" }
+  ],
+
+  "_hearingComment": "The item database carries no hearing stat - every headset reads AmbientVolume -50 and DryVolume -60 - so these come from the wiki's measured table and are matched on the name.",
+  "HeadsetMetres": {
+    "ComTac VI": 67, "ComTac V": 67, "ComTac IV": 66,
+    "Liberator": 66, "FAST RAC": 66,
+    "XCEL": 63, "Sordin": 63, "Tactical Sport": 63,
+    "GSSh": 62, "Earmor M32": 61, "ComTac II": 60,
+    "Razor": 59, "ProFlex": 59, "TEP-300": 54
+  },
+
+  "_carrierComment": "A plate carrier is armorClass 0 - the plates carry the class - so colouring a carrier by its own class paints every good one grey. Colour it by the best class it will accept instead.",
+  "ColourCarriersByBestPlate": true,
+
+  "_recolourComment": "Rigs and helmets are almost all 'default' already, so recolouring them loses nothing. Body armour is mostly blue, which carries no information either. Set false to leave a category alone.",
+  "RecolourArmour": true,
+  "RecolourHelmets": true,
+  "RecolourRigs": true,
+  "RecolourPlates": true,
+  "RecolourHeadsets": true
+}
