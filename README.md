@@ -1,5 +1,13 @@
 # GearTierColors
 
+> ## ⚠️ Superseded by [TierColors](https://github.com/pCTHUWU/TierColors)
+>
+> This mod and its sibling were the same thing with a different stat, so they have been merged into
+> one. **TierColors** does everything this did, plus the other half, from a single install.
+> Nothing here is broken — it is just no longer where the work happens. Remove this before
+> installing TierColors; they declare each other incompatible so SPT will refuse to load either
+> rather than recolour the same items twice.
+
 > ## 🤖 Written by AI
 >
 > **Effectively all of this — the design, the code, the debugging and these docs — was written by
