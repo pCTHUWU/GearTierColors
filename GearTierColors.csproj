@@ -22,8 +22,17 @@
   <ItemGroup>
     <PackageReference Include="SemanticVersioning" Version="3.0.0" />
   </ItemGroup>
-  <!-- Deploys straight into SPT on build, config included. -->
-  <Target Name="CopyToServer" AfterTargets="PostBuildEvent">
+  <!-- Deployed straight into SPT on build, config included.
+
+       DISABLED because this mod is SUPERSEDED by TierColors, which does this and the headset half
+       from one install. The two declare each other incompatible, so installing this alongside
+       TierColors makes SPT refuse to load EITHER - a build here would break the server, not just
+       add a stale mod. MSBuild says nothing about the copy, so the only evidence would be the
+       server failing at load. Set the property to true only if you have removed TierColors. -->
+  <PropertyGroup>
+    <DeployGearTierColors Condition="'$(DeployGearTierColors)' == ''">false</DeployGearTierColors>
+  </PropertyGroup>
+  <Target Name="CopyToServer" AfterTargets="PostBuildEvent" Condition="'$(DeployGearTierColors)' == 'true'">
     <MakeDir Directories="C:\SPT\SPT_Runtime\user\mods\GearTierColors" />
     <Copy SourceFiles="$(ProjectDir)$(OutDir)$(TargetName).dll"
           DestinationFolder="C:\SPT\SPT_Runtime\user\mods\GearTierColors" />
